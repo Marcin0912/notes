@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('notes', NoteController::class)
+Route::resource('notes', NoteController::class)->except(['create', 'edit'])
     ->middleware('auth.basic');
