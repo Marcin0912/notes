@@ -17,8 +17,11 @@ class AuthenticateOnceWithBasicAuth
      */
     public function handle(Request $request, Closure $next)
     {
+        if(!$request->header('Authorization')) {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
         if (Auth::onceBasic()) {
-            return response()->json(['message' => 'Unauthorized']);
+            return response()->json(['message' => 'Unauthorized'], 401);
         } else {
             return $next($request);
         }
