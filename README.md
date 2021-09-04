@@ -52,7 +52,7 @@
 
 `curl -X DELETE -v http://localhost:8000/api/notes/6 -H "Accept: application/json" -u "test2@test2.com:password" | less`
 
-7. <p>Delete note ID:6 for test1@tes1.com user</p>
+7. <p>Delete note ID:6 for test1@test1.com user</p>
 
 `curl -X DELETE -v http://localhost:8000/api/notes/6 -H "Accept: application/json" -u "test1@test1.com:password" | less`
 
